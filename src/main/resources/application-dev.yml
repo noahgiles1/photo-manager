@@ -1,0 +1,8 @@
+spring.application.name: photo-manager
+server.port: 8081
+MONGODB_USERNAME: "user"
+MONGODB_PASSWORD: "password"
+MONGODB_HOST: "localhost"
+MONGODB_PORT: '27017'
+MONGODB_DB: "db"
+MONGODB_RS: "rs1"
