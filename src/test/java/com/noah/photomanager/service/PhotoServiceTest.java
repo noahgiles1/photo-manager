@@ -44,7 +44,7 @@ class PhotoServiceTest extends MongoContainer {
         when(multipartFileMock.getBytes()).thenReturn(binaryData);
 
         // Insert photo
-        String photoId = photoService.addPhoto(title, multipartFileMock);
+        String photoId = photoService.addPhoto(title, multipartFileMock, null,null, null, null, null);
 
         // Get photo from repository
         Photo photo = photoRepository.findById(photoId).orElseThrow();
@@ -58,7 +58,7 @@ class PhotoServiceTest extends MongoContainer {
     @Test
     void whenGetPhoto_givenValidId_thenShouldReturnPhoto() {
         String id = "123";
-        Photo expectedPhoto = new Photo("testTitle");
+        Photo expectedPhoto = Photo.builder().title("testTitle").build();
         expectedPhoto.setId(id);
         photoRepository.insert(expectedPhoto);
 

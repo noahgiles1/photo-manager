@@ -38,7 +38,7 @@ class PhotoControllerTest extends MongoContainer {
         MockMultipartFile mockFile =
                 new MockMultipartFile("image", bytes);
 
-        String id = photoService.addPhoto(title, mockFile);
+        String id = photoService.addPhoto(title, mockFile, null,null, null, null, null);
         //when(photoService.addPhoto("Test", file)).thenReturn("Photo added successfully!");
 
         mockMvc.perform(multipart("/api/photos/add")
